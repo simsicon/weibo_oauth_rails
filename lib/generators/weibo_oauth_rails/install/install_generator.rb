@@ -30,7 +30,7 @@ end
   def create_model_file
     create_file "app/models/#{file_name}.rb", <<-FILE
 class #{class_name} < ActiveRecord::Base
-  include WeiboOauthRails::User
+  include WeiboOauthRails::Utils::InstanceMethods
   attr_accessible :provider, :uid, :name, :email
 end
     FILE
