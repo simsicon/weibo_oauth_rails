@@ -1,7 +1,7 @@
 module WeiboOauthRails
   module Utils
     module InstanceMethods
-      def self.create_with_omniauth(auth)
+      def create_with_omniauth(auth)
         create! do |user|
           user.provider = auth['provider']
           user.uid = auth['uid']
@@ -13,7 +13,7 @@ module WeiboOauthRails
       end
 
 
-      def self.authenticate_with_cookie(id, cookie)
+      def authenticate_with_cookie(id, cookie)
         user = find(id) if id
         (user && user.uid == cookie) ? user : nil
       end
