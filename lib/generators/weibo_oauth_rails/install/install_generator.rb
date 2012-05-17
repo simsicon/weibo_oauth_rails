@@ -43,4 +43,12 @@ class ${class_name} < ActiveRecord::Base
 end
     FILE
   end
+  
+  def add_routes
+    route("mount WeiboOauthRails::Engine, :at => '/'")
+    route("match '/auth/:provider/callback' => 'sessions#create'")
+    route("match '/signin' => 'sessions#new', :as => :signin")
+    route("match '/signout' => 'sessions#destroy', :as => :signout")
+    route("match '/auth/failure' => 'sessions#failure'")
+  end
 end
