@@ -9,7 +9,7 @@ class WeiboOauthRails::InstallGenerator < Rails::Generators::NamedBase
   def copy_migration_file
     time = Time.now.utc.strftime("%Y%m%d%H%M%S").to_i.to_s
     create_file "db/migrate/#{time}_create_weibo_oauth_rails_user_migration.rb", <<-FILE
-class CreateUserMigration < ActiveRecord::Migration
+class CreateWeiboOauthRailsUserMigration < ActiveRecord::Migration
   def change
     create_table :users do |t|
       t.string :provider
@@ -29,7 +29,7 @@ end
   
   def create_model_file
     create_file "app/models/#{file_name}.rb", <<-FILE
-class ${class_name} < ActiveRecord::Base
+class #{class_name} < ActiveRecord::Base
   include WeiboOauthRails::User
   attr_accessible :provider, :uid, :name, :email
 end
