@@ -7,14 +7,6 @@ class WeiboOauthRails::InstallGenerator < Rails::Generators::NamedBase
   end
   
   def copy_migration_file
-    puts "parameters"
-    puts file_name
-    puts class_name
-    puts plural_name
-    template "migration.rb", "db/migrate/create_weibo_oauth_rails_user_migration.rb"
-  end
-
-  def create_helper_file
     time = Time.now.utc.strftime("%Y%m%d%H%M%S").to_i.to_s
     create_file "db/migrate/#{time}_create_weibo_oauth_rails_user_migration.rb", <<-FILE
 class CreateUserMigration < ActiveRecord::Migration
