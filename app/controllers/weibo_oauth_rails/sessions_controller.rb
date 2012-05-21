@@ -45,7 +45,8 @@ module WeiboOauthRails
         if auth['info']
           user.name = auth['info']['name'] || ""
           user.email = auth['info']['email'] || ""
-          user.raw_data = auth
+          user.raw_data = auth.to_s
+          puts auth
         end
       end
     end
