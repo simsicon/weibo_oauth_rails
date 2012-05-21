@@ -21,17 +21,17 @@ module WeiboOauthRails
       #       redirect_to root_path, :notice => 'Signed in!'
       #     end
 
-      redirect_to root_path, :notice => 'Signed in!'
+      redirect_to '/', :notice => 'Signed in!'
 
     end
 
     def destroy
       sign_out
-      redirect_to root_path, :notice => 'Signed out!'
+      redirect_to '/', :notice => 'Signed out!'
     end
 
     def failure
-      redirect_to root_path, :alert => "Authentication error: #{params[:message].humanize}"
+      redirect_to '/', :alert => "Authentication error: #{params[:message].humanize}"
     end
 
     def authenticate
