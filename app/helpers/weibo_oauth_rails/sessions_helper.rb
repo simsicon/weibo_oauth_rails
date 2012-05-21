@@ -2,6 +2,7 @@
 
 module WeiboOauthRails
   module SessionsHelper
+    
     def sign_in(user)
       cookies.permanent.signed[:auth_token] = [user.id, user.cookie]
       self.current_user = user
