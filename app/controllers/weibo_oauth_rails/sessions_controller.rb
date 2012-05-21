@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 module WeiboOauthRails
   class SessionsController < ApplicationController
     skip_filter :authenticate, only: [ :new, :create ]

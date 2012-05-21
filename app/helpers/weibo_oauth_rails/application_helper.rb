@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 module WeiboOauthRails
   module ApplicationHelper
     def sign_in(user)
@@ -28,7 +30,7 @@ module WeiboOauthRails
 
     def to_signin_or_not_to_signin
       if signed_in?
-        link_to('登出', '/signout', :method => :delete, :class => 'sign_in_out').html_safe
+        link_to('sign out', '/signout', :method => :delete, :class => 'sign_in_out').html_safe
       else
         link_to image_tag('http://www.sinaimg.cn/blog/developer/wiki/240.png'), '/auth/weibo', :class => 'sign_in_out'
       end
