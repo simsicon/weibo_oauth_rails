@@ -16,5 +16,6 @@ gem 'weibo_oauth_rails', :git => 'git://github.com/simsicon/weibo_oauth_rails.gi
 
 ```console
 bundle install
-rails generate weibo_oauth_rails:install
+rails generate weibo_oauth_rails:install MODEL_NAME
+rake db:migrate
 ```
