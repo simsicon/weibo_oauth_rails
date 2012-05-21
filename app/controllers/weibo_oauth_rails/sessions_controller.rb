@@ -53,9 +53,5 @@ module WeiboOauthRails
       user = User.find(id) if id
       (user && user.uid == cookie) ? user : nil
     end
-
-    def cookie
-      uid
-    end
   end
 end
