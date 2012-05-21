@@ -1,6 +1,5 @@
 module WeiboOauthRails
   class SessionsController < ApplicationController
-    helper WeiboOauthRails::SessionsHelper
     skip_filter :authenticate, only: [ :new, :create ]
 
     def new

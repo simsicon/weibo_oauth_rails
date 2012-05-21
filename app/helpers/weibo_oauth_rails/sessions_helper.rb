@@ -1,7 +1,7 @@
 # encoding: utf-8
 
 module WeiboOauthRails
-  module SessionsHelper
+  class SessionsHelper
     
     def sign_in(user)
       cookies.permanent.signed[:auth_token] = [user.id, user.cookie]
