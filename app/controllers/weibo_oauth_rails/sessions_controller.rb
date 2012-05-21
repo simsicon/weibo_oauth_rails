@@ -10,7 +10,9 @@ module WeiboOauthRails
       auth = request.env["omniauth.auth"]
       user = User.where(:provider => auth['provider'], 
                         :uid => auth['uid']).first || create_with_omniauth(auth)
-      sign_in(user)
+      #sign_in(user)
+      puts "*" * 79
+      puts sign_in user
       # if !user.email
       #       redirect_to edit_user_path(user), :alert => "Please enter your email address."
       #     else
