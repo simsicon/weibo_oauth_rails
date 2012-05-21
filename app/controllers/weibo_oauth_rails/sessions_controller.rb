@@ -18,20 +18,20 @@ module WeiboOauthRails
       # if !user.email
       #       redirect_to edit_user_path(user), :alert => "Please enter your email address."
       #     else
-      #       redirect_to root_url, :notice => 'Signed in!'
+      #       redirect_to root_path, :notice => 'Signed in!'
       #     end
 
-      redirect_to root_url, :notice => 'Signed in!'
+      redirect_to root_path, :notice => 'Signed in!'
 
     end
 
     def destroy
       sign_out
-      redirect_to root_url, :notice => 'Signed out!'
+      redirect_to root_path, :notice => 'Signed out!'
     end
 
     def failure
-      redirect_to root_url, :alert => "Authentication error: #{params[:message].humanize}"
+      redirect_to root_path, :alert => "Authentication error: #{params[:message].humanize}"
     end
 
     def authenticate
