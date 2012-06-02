@@ -34,9 +34,10 @@ class #{class_name} < ActiveRecord::Base
   attr_accessible :provider, :uid, :name, :email
   
   private
-    def user_from_cookie
-      User.authenticate_with_cookie(* remember_token)
-    end
+  def self.authenticate_with_cookie(id, cookie)
+    user = find(id) if id
+    (user && user.uid == cookie) ? user : nil
+  end
 end
     FILE
   end
