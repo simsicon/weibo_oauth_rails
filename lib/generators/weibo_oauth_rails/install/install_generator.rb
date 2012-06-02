@@ -32,6 +32,11 @@ end
 class #{class_name} < ActiveRecord::Base
   include WeiboOauthRails::Utils::InstanceMethods
   attr_accessible :provider, :uid, :name, :email
+  
+  private
+    def user_from_cookie
+      User.authenticate_with_cookie(* remember_token)
+    end
 end
     FILE
   end
