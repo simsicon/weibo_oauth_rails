@@ -33,7 +33,6 @@ class #{class_name} < ActiveRecord::Base
   include WeiboOauthRails::Utils::InstanceMethods
   attr_accessible :provider, :uid, :name, :email
   
-  private
   def self.authenticate_with_cookie(id, cookie)
     user = find(id) if id
     (user && user.uid == cookie) ? user : nil
